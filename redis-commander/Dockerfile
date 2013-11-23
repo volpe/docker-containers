@@ -6,6 +6,7 @@ RUN         echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > 
 RUN         apt-get -y update
 RUN         apt-get -y install wget 
 RUN         wget -O - http://nodejs.org/dist/v0.10.22/node-v0.10.22-linux-x64.tar.gz | tar -C /usr/local/ --strip-components=1 -zxv
+RUN         npm install -g redis-commander
 
 EXPOSE      6400
 CMD         ["redis-commander", "-p", "6400"]
